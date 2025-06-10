@@ -1,9 +1,7 @@
+import TestimonialsPage from "../../pages/TestimonialsPage/TestimonialsPage";
+
 import css from "./App.module.css";
 
 export default function App() {
-  return (
-    <>
-      <h1>Vite + React + TypeScript</h1>
-    </>
-  );
+  return <TestimonialsPage />;
 }
