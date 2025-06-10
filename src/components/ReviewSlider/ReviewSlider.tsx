@@ -10,6 +10,9 @@ import css from "./ReviewSlider.module.css";
 export default function ReviewSlider() {
   const [cards, setCards] = useState(testimonials);
 
+  const visibleCards = cards.slice(0, 3);
+  const currentIndex = testimonials.indexOf(cards[0]);
+
   const handleNext = () => {
     setCards((prev) => [...prev.slice(1), prev[0]]);
   };
@@ -18,13 +21,11 @@ export default function ReviewSlider() {
     setCards((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
   };
 
-  const currentIndex = testimonials.indexOf(cards[0]);
-
   return (
     <div className={css.sliderWrapper}>
       <div className={css.sliderContainer}>
         <SliderButton direction="prev" handleClick={handlePrev} />
-        <ReviewList testimonials={cards} />
+        <ReviewList testimonials={visibleCards} />
         <SliderButton direction="next" handleClick={handleNext} />
       </div>
 
