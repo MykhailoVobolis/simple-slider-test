@@ -1,4 +1,5 @@
 export interface Testimonial {
+  id: string;
   company: string;
   text: string;
   author: {
@@ -19,4 +20,13 @@ export interface ReviewCardProps {
 export interface SliderButtonProps {
   direction: "prev" | "next";
   handleClick(): void;
+}
+
+export interface SliderPaginationProps {
+  testimonials: Testimonial[];
+  currentIndex: number;
+}
+
+export interface SlideIndicatorProps {
+  isActive: boolean;
 }

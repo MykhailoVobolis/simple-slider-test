@@ -7,8 +7,8 @@ import css from "./ReviewList.module.css";
 export default function ReviewList({ testimonials }: ReviewListProps) {
   return (
     <ul className={css.reviewList}>
-      {testimonials.map((testimonial, index) => (
-        <ReviewCard key={index} testimonial={testimonial} />
+      {testimonials.map((testimonial) => (
+        <ReviewCard key={testimonial.id} testimonial={testimonial} />
       ))}
     </ul>
   );

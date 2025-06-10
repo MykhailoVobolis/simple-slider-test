@@ -1,0 +1,11 @@
+.indikator {
+  width: 11px;
+  height: 11px;
+  background-color: var(--text-grey-color);
+  border-radius: 1000px;
+  transition: background-color var(--animation);
+}
+
+.active {
+  background-color: var(--indikator-color);
+}

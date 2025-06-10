@@ -1,5 +1,12 @@
 .sliderWrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.sliderContainer {
+  display: flex;
   align-items: center;
   gap: 28px;
 }
