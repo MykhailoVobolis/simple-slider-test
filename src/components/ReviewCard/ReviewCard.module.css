@@ -1,0 +1,48 @@
+.cardWrapper {
+  position: relative;
+  background-color: var(--background);
+  border: 1px solid var(--grey-color);
+  border-radius: 12px;
+  width: calc((100% - 36px) / 3);
+  padding: 160px 25px 40px 25px;
+}
+
+.companyLogo {
+  position: absolute;
+  bottom: 380px;
+  left: 20px;
+  height: auto;
+  width: auto;
+}
+
+.textReview {
+  line-height: 1.75;
+  color: var(--text-grey-color);
+}
+
+.quoteIcon {
+  display: block;
+  margin-left: auto;
+  fill: var(--text-grey-color);
+  margin-bottom: 10px;
+}
+
+.authorContainer {
+  display: flex;
+  gap: 17px;
+}
+
+.authorPhoto {
+  width: 60px;
+  height: 60px;
+}
+
+.authorName {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.46;
+}
+
+.authorPosition {
+  line-height: 1.4;
+}

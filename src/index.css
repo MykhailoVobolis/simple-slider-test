@@ -14,15 +14,20 @@
 
 :root {
   --black: #000000;
-  --background-main: #ffffff;
+  --background: #ffffff;
+  --grey-color: #b6b1b1;
+  --text-grey-color: #9b9a99;
+  --button-grey-color: #707070;
 
   color: var(--black);
-  background-color: var(--background-main);
+  background-color: var(--background);
 
   font-family: Space-Grotesk, sans-serif;
   line-height: 1.5;
   font-weight: 500;
   font-size: 20px;
+
+  --animation: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

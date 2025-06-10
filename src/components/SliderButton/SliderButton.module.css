@@ -1,0 +1,18 @@
+.sliderBtn {
+  width: 68px;
+  height: 68px;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  border: 1px solid var(--grey-color);
+  color: var(--button-grey-color);
+  transition: all var(--animation);
+}
+
+.sliderBtn:hover {
+  color: var(--text-grey-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}

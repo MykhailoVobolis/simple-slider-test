@@ -1,3 +1,5 @@
+import ReviewSlider from "../../components/ReviewSlider/ReviewSlider";
+
 import css from "./TestimonialsPage.module.css";
 
 export default function TestimonialsPage() {
@@ -5,7 +7,7 @@ export default function TestimonialsPage() {
     <section className={css.testimonialSection}>
       <div className={css.container}>
         <h1 className={css.title}>Voices of Success with Sales Fortuna</h1>
-        <div>Slider</div>
+        <ReviewSlider />
       </div>
     </section>
   );
