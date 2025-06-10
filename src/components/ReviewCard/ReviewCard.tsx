@@ -12,9 +12,11 @@ export default function ReviewCard({ testimonial }: ReviewCardProps) {
 
   return (
     <li className={css.cardWrapper}>
-      <img className={css.companyLogo} src={company} alt="Company logo" />
-      <p className={css.textReview}>{text}</p>
-      <BiSolidQuoteRight size={24} className={css.quoteIcon} />
+      <div>
+        <img className={css.companyLogo} src={company} alt="Company logo" />
+        <p className={css.textReview}>{text}</p>
+        <BiSolidQuoteRight size={24} className={css.quoteIcon} />
+      </div>
       <div className={css.authorContainer}>
         <img className={css.authorPhoto} src={photo} alt={`${name} photo`} />
         <div>

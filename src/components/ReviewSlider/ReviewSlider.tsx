@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { testimonials } from "../../data/testimonialsData";
+import { useMedia } from "react-use";
 
 import ReviewList from "../ReviewList/ReviewList";
 import SliderButton from "../SliderButton/SliderButton";
@@ -10,7 +11,19 @@ import css from "./ReviewSlider.module.css";
 export default function ReviewSlider() {
   const [cards, setCards] = useState(testimonials);
 
-  const visibleCards = cards.slice(0, 3);
+  const isTablet = useMedia("(min-width: 768px)");
+  const isDesktop = useMedia("(min-width: 1440px)");
+
+  let visibleCards = cards.slice(0, 1);
+
+  if (isTablet) {
+    visibleCards = cards.slice(0, 2);
+  }
+
+  if (isDesktop) {
+    visibleCards = cards.slice(0, 3);
+  }
+
   const currentIndex = testimonials.indexOf(cards[0]);
 
   const handleNext = () => {
@@ -24,12 +37,17 @@ export default function ReviewSlider() {
   return (
     <div className={css.sliderWrapper}>
       <div className={css.sliderContainer}>
-        <SliderButton direction="prev" handleClick={handlePrev} />
+        {isDesktop && <SliderButton direction="prev" handleClick={handlePrev} />}
         <ReviewList testimonials={visibleCards} />
-        <SliderButton direction="next" handleClick={handleNext} />
+        {isDesktop && <SliderButton direction="next" handleClick={handleNext} />}
       </div>
-
       <SliderPagination testimonials={testimonials} currentIndex={currentIndex} />
+      {!isDesktop && (
+        <div className={css.btnBar}>
+          <SliderButton direction="prev" handleClick={handlePrev} />
+          <SliderButton direction="next" handleClick={handleNext} />
+        </div>
+      )}
     </div>
   );
 }

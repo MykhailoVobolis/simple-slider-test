@@ -7,7 +7,6 @@
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  height: 755px;
   padding: 46px 0;
 }
 
@@ -22,14 +21,30 @@
   flex-direction: column;
   align-items: center;
   gap: 70px;
-  width: 1363px;
+  width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .title {
   font-weight: 700;
-  font-size: 48px;
-  line-height: 0.85;
+  font-size: 38px;
+  line-height: 1.3;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 740px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 1363px;
+  }
 }
