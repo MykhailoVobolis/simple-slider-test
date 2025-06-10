@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { testimonials } from "../../data/testimonialsData";
 import { useMedia } from "react-use";
 
@@ -10,20 +10,22 @@ import css from "./ReviewSlider.module.css";
 
 export default function ReviewSlider() {
   const [cards, setCards] = useState(testimonials);
+  const [visibleCount, setVisibleCount] = useState(1);
 
   const isTablet = useMedia("(min-width: 768px)");
   const isDesktop = useMedia("(min-width: 1440px)");
 
-  let visibleCards = cards.slice(0, 1);
+  useEffect(() => {
+    if (isDesktop) {
+      setVisibleCount(3);
+    } else if (isTablet) {
+      setVisibleCount(2);
+    } else {
+      setVisibleCount(1);
+    }
+  }, [isTablet, isDesktop]);
 
-  if (isTablet) {
-    visibleCards = cards.slice(0, 2);
-  }
-
-  if (isDesktop) {
-    visibleCards = cards.slice(0, 3);
-  }
-
+  const visibleCards = cards.slice(0, visibleCount);
   const currentIndex = testimonials.indexOf(cards[0]);
 
   const handleNext = () => {
